@@ -4,16 +4,17 @@ import './ButtonStyles.css';
 type IncType={
     Inc:(value: number)=>void;
     Reset:(value: number)=>void;
+    num:Array<NumType>
+}
+type NumType={
+    id:number
 }
 
-
-
 let Buttons = (props:IncType) => {
-    let counter=0
     return (
         <div className={'buttons'}>
-            <div onClick={()=>props.Inc(1)} className={'clickMe'}>INC</div>
-            <div onClick={()=>props.Reset(0)} className={'clickMe'}>RESET</div>
+            <button disabled={props.num.length==6?true:false} onClick={()=>props.Inc(1)} className={'clickMe'}>INC</button>
+            <button  disabled={props.num.length==1?true:false} onClick={()=>props.Reset(0)} className={'clickMe'}>RESET</button>
         </div>
     )
 }
@@ -27,16 +28,17 @@ export default Buttons;
 // type IncType={
 //     Inc:(value: number)=>void;
 //     Reset:(value: number)=>void;
+//     num:Array<NumType>
+// }
+// type NumType={
+//     id:number
 // }
 //
-//
-//
 // let Buttons = (props:IncType) => {
-//     let counter=0
 //     return (
 //         <div className={'buttons'}>
-//             <div onClick={()=>props.Inc(1)} className={'clickMe'}>INC</div>
-//             <div onClick={()=>props.Reset(0)} className={'clickMe'}>RESET</div>
+//             <button onClick={()=>props.Inc(1)} className={'clickMe'}>INC</button>
+//             <button  disabled={props.num.length==1?true:false} onClick={()=>props.Reset(0)} className={'clickMe'}>RESET</button>
 //         </div>
 //     )
 // }

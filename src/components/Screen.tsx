@@ -23,13 +23,16 @@ export default Screen
 // import './ScreenStyles.css';
 //
 // type ScreenType={
-//     num:Array<number>;
+//     num:Array<NumType>
 // }
 //
-// function Screen(props:ScreenType) {
-//     return(
-//         <div className={'screen'}><span className={props.num.length>=5? 'red':''}>{props.num.length}</span></div>
+// type NumType={
+//     id:number
+// }
+//
+// function Screen(props: ScreenType) {
+//     return (
+//         <div className={'screen'}><span className={props.num[0].id>= 5 ? 'red' : ''}>{props.num[0].id}</span></div>
 //     )
 // }
-//
 // export default Screen
